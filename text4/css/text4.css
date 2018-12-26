@@ -42,7 +42,11 @@ img{
 .page-shopping .check-span{
     display:block;
     width:24px;
-    height:20px;   
+    height:20px; 
+    border:1px solid #ccc;  
+}
+.page-shopping .check-true{
+    background:lightblue;
 }
 .page-shopping .td-check{
     width:70px;

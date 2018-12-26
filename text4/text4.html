@@ -109,9 +109,9 @@
                item.pro_num++;
             },
             selectProduct:function(_isSelect){
-                    for(var i=0,len=this.productList.length;i<len; i++){
-                         this.productList[i].select=!_isSelect;
-                    };
+                for(var i=0,len=this.productList.length;i<len; i++){
+                    this.productList[i].select=!_isSelect;
+                };
 
             },
             deleteProduct:function(){
@@ -130,13 +130,13 @@
         },
         computed:{
             isSelectAll:function(){
-                return this.productList.every(function(val){
-                    return val.select
+                return this.productList.every(function(item){
+                    return item.select
                 });
             },
             getTotal:function(){
-                var _proList=this.productList.filter(function(val){
-                    return val.select
+                var _proList=this.productList.filter(function(item){
+                    return item.select
                 }),totalPrice=0;
                 for(var i=0,len=_proList.length;i<len;i++){
                     totalPrice+=_proList[i].pro_num*_proList[i].pro_price;
