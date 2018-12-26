@@ -38,9 +38,9 @@
                         </td>
                         <td class="td-num">
                             <div class="product-num">
-                                <a href="javascript:;" class="num-reduce num do fl" @click="item.pro_num--"><span></span></a>
+                                <a href="javascript:;" class="num-reduce num-do fl" @click="fNumMinus(item)"><span>-</span></a>
                                 <input type="text" class="num-input" v-model="item.pro_num">
-                                <a href="javascript:;" class="num-add num-do fr" @click="item.pro_num++"><span></span></a>
+                                <a href="javascript:;" class="num-add num-do fr" @click="fNumAdd(item)"><span>+</span></a>
                             </div>
                         </td>
                         <td class="td-price">
@@ -99,7 +99,15 @@
 
         },
         methods:{
-
+            fNumMinus:function(item){
+                if(item.pro_num<=0){
+                    return;
+                }
+                item.pro_num--;
+            },
+            fNumAdd:function(item){
+               item.pro_num++;
+            },
             selectProduct:function(_isSelect){
                     for(var i=0,len=this.productList.length;i<len; i++){
                          this.productList[i].select=!_isSelect;
